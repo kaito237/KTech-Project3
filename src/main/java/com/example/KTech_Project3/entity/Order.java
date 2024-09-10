@@ -2,10 +2,7 @@ package com.example.KTech_Project3.entity;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @Data
@@ -18,7 +15,7 @@ public class Order {
     private Long id;
     private String itemName;
     private String offerName;
-
+    @Setter
     private String offerStatus;
 
     @ManyToOne

@@ -1,10 +1,7 @@
 package com.example.KTech_Project3.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
@@ -22,12 +19,20 @@ public class Item {
 
     private Long id;
     private String sellerName;
-
+    @Column(nullable = false)
+    @Setter
     private String title;
+    @Column(nullable = false)
+    @Setter
     private String description;
+    @Setter
     private String titleImage;
+    @Column(nullable = false)
+    @Setter
     private Integer price;
+    @Setter
     private String status;
+    @Setter
     private String response;
 
     @ManyToOne

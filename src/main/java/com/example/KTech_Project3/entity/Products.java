@@ -2,10 +2,7 @@ package com.example.KTech_Project3.entity;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -14,19 +11,19 @@ import lombok.extern.slf4j.Slf4j;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Items {
+public class Products {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    @Setter
     private String name;
-
+    @Setter
     private String image;
-
+    @Setter
     private String description;
-
+    @Setter
     private String price;
-
+    @Setter
     private Integer stock;
 
 
