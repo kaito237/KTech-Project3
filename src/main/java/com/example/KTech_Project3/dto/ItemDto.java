@@ -1,36 +1,42 @@
 package com.example.KTech_Project3.dto;
 
-
 import com.example.KTech_Project3.entity.Item;
-import com.example.KTech_Project3.entity.Order;
+import jakarta.persistence.Column;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
-@Data
+@Getter
 @Builder
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
 public class ItemDto {
     private Long id;
-    private String sellerName;
+
+    @Column(nullable = false)
+    @NotBlank
     private String title;
+
+    @Column(nullable = false)
+    @NotBlank
     private String description;
-    private String titleImage;
-    private Integer price;
+
+    @Column(nullable = false)
+    @Min(0)
+    private Integer minimumPrice;
+
     private String status;
-    private String response;
-    private Order order;
-    public static ItemDto fromEntity(Item entity) {
+    private String itemImg;
+
+    public static ItemDto fromEntity (Item entity){
         return ItemDto.builder()
                 .id(entity.getId())
-                .sellerName(entity.getSellerName())
                 .title(entity.getTitle())
                 .description(entity.getDescription())
-                .titleImage(entity.getTitleImage())
-                .price(entity.getPrice())
+                .minimumPrice(entity.getMinimumPrice())
+                .itemImg(entity.getItemImg())
                 .status(entity.getStatus())
-                .response(entity.getResponse())
                 .build();
     }
-
 }
