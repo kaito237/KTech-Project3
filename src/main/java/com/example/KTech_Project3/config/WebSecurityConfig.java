@@ -29,7 +29,8 @@ public class WebSecurityConfig {
                                 "/users/register",
                                 "/users/login",
                                 "/users/{userId}/avatar",
-                                "/items"
+                                "/items",
+                                "/hello"
                         )
                         .permitAll()
 

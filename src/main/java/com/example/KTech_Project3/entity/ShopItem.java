@@ -9,7 +9,7 @@ import lombok.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Getter
+@Data
 @Builder
 @Entity
 @NoArgsConstructor
@@ -21,39 +21,33 @@ public class ShopItem {
 
     // 필수 정보
     // 상품 이름
-    @Setter
-    @Column(nullable = false)
-    @NotBlank
+    @Column(nullable = false, name = "name", length = 255)
+    @NotBlank// null // "      "
     private String name;
 
     // 상품 설명
-    @Setter
     @Column(nullable = false)
     @NotBlank
     private String description;
 
     // 상품 가격
-    @Setter
     @Column(nullable = false)
     @Min(0)
     private Integer price;
 
 
     // 상품 재고
-    @Setter
     @Column(nullable = false)
     @Min(0)
     private Integer stock;
 
 
-    @Setter
     private String shopItemImg;
 
 
-    @Setter
     @ManyToOne
-    @JoinColumn(name = "shop_id") // shop id
-    private Shop shop;
+    @JoinColumn(name = "shop_id") // bieu dien cho khoa ngoai
+    private Shop shop;// khoa thi se la object
 
     // 상품을 주문한 주문 목록
     @OneToMany(mappedBy = "shopItem")
