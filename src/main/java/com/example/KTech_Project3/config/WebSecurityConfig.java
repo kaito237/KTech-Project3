@@ -27,10 +27,14 @@ public class WebSecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(
                                 "/users/register",
+                                "/users/update",
+                                "users/profile",
+                                "users/business",
                                 "/users/login",
                                 "/users/{userId}/avatar",
                                 "/items",
-                                "/hello"
+                                "/hello",
+                                "/token/**"
                         )
                         .permitAll()
 
