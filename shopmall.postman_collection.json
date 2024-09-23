@@ -1,0 +1,258 @@
+{
+	"info": {
+		"_postman_id": "606dd8ec-5244-486c-ab04-f5c2f0de6463",
+		"name": "shopmall",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37567672"
+	},
+	"item": [
+		{
+			"name": "token",
+			"item": [
+				{
+					"name": "issue",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"admin\",\n    \"password\":\"admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/token/issue",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"token",
+								"issue"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "validate",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/token/validate?token=eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcyNjQ1MTI0NSwiZXhwIjoxNzI3NjYwODQ1fQ.f8ZiEksUxJDXPnji7Gds_PuNxwBfAbH0UIt8Pvrszh41kRorG6iaFQOyx0Ad32dE",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"token",
+								"validate"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcyNjQ1MTI0NSwiZXhwIjoxNzI3NjYwODQ1fQ.f8ZiEksUxJDXPnji7Gds_PuNxwBfAbH0UIt8Pvrszh41kRorG6iaFQOyx0Ad32dE"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "user/register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/register?username=testuser2&password=password125&password-check=password125",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"register"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "testuser2"
+								},
+								{
+									"key": "password",
+									"value": "password125"
+								},
+								{
+									"key": "password-check",
+									"value": "password125"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user/update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/update?username=testuser2&password=password125&nickname=kaito&name=trang&age=25&email=kaito2372000@gmail.com&phone=01098902307",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"update"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "testuser2"
+								},
+								{
+									"key": "password",
+									"value": "password125"
+								},
+								{
+									"key": "nickname",
+									"value": "kaito"
+								},
+								{
+									"key": "name",
+									"value": "trang"
+								},
+								{
+									"key": "age",
+									"value": "25"
+								},
+								{
+									"key": "email",
+									"value": "kaito2372000@gmail.com"
+								},
+								{
+									"key": "phone",
+									"value": "01098902307"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users/profile?",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "postman-cloud:///1ef629ff-8e1e-4290-a884-bc7aa44c58b4"
+								},
+								{
+									"key": "username",
+									"value": "testuser2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/users/profile?",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"profile"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcyNjQ1MDUyOCwiZXhwIjoxNzI3NjYwMTI4fQ._Shw3VJEapvmylqCFraIzncY4VnNW54_VpRaC2XD77lu8hzVFO0MFuuE_vJ63lyx",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Item 1\",\n  \"price\": 100,\n  \"description\": \"This is a sample item.\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/iteam/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"iteam",
+						"register"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
