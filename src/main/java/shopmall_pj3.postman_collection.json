@@ -1,0 +1,920 @@
+{
+	"info": {
+		"_postman_id": "606dd8ec-5244-486c-ab04-f5c2f0de6463",
+		"name": "shopmall",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37567672"
+	},
+	"item": [
+		{
+			"name": "token",
+			"item": [
+				{
+					"name": "issue",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"admin\",\n    \"password\":\"admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/token/issue",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"token",
+								"issue"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "validate",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/token/validate?token=eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcyNjQ1MTI0NSwiZXhwIjoxNzI3NjYwODQ1fQ.f8ZiEksUxJDXPnji7Gds_PuNxwBfAbH0UIt8Pvrszh41kRorG6iaFQOyx0Ad32dE",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"token",
+								"validate"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcyNjQ1MTI0NSwiZXhwIjoxNzI3NjYwODQ1fQ.f8ZiEksUxJDXPnji7Gds_PuNxwBfAbH0UIt8Pvrszh41kRorG6iaFQOyx0Ad32dE"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "user/register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/register?username=testuser2&password=password125&password-check=password125",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"register"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "testuser2"
+								},
+								{
+									"key": "password",
+									"value": "password125"
+								},
+								{
+									"key": "password-check",
+									"value": "password125"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user/update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/update?username=testuser2&password=password125&nickname=kaito&name=trang&age=25&email=kaito2372000@gmail.com&phone=01098902307",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"update"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "testuser2"
+								},
+								{
+									"key": "password",
+									"value": "password125"
+								},
+								{
+									"key": "nickname",
+									"value": "kaito"
+								},
+								{
+									"key": "name",
+									"value": "trang"
+								},
+								{
+									"key": "age",
+									"value": "25"
+								},
+								{
+									"key": "email",
+									"value": "kaito2372000@gmail.com"
+								},
+								{
+									"key": "phone",
+									"value": "01098902307"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users/profile?",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "postman-cloud:///1ef629ff-8e1e-4290-a884-bc7aa44c58b4"
+								},
+								{
+									"key": "username",
+									"value": "testuser2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/users/profile?",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"profile"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "shopItem",
+			"item": [
+				{
+					"name": "shop/items/register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Example Item\",\n  \"price\": 19.99,\n  \"description\": \"A test shop item\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/shop/items/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"shop",
+								"items",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"price\": 25.99,\n  \"description\": \"Updated description for the shop item\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/shop/items/update?name=Example Item",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"shop",
+								"items",
+								"update"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Example Item"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/shop/items/delete?name=Example Item",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"shop",
+								"items",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Example Item"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/buyRequest/sendMoney",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/token/issue/buyRequest/sendMoney?totalPrice=100",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"token",
+								"issue",
+								"buyRequest",
+								"sendMoney"
+							],
+							"query": [
+								{
+									"key": "totalPrice",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buyRequest/check",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/shop/items/buyRequest/check",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"shop",
+								"items",
+								"buyRequest",
+								"check"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/itemImg",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/trangbui/Downloads/DALL·E 2024-09-09 10.08.55 - A system architecture diagram for an e-commerce application built using Spring Boot. The diagram should include the following components_ Client (Post.webp"
+								},
+								{
+									"key": "shopItemName ",
+									"value": "book",
+									"type": "text"
+								},
+								{
+									"key": "shopName  ",
+									"value": "kaito",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/shop/items/itemImg",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"shop",
+								"items",
+								"itemImg"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "shop",
+			"item": [
+				{
+					"name": "shop/update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"shopName\": \"Updated Shop Name\",\n  \"description\": \"Updated description of the shop\",\n  \"address\": \"123 New Address\",\n  \"contactInfo\": \"contact@example.com\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/shop/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"shop",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "apply/open",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/shop/apply/open",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"shop",
+								"apply",
+								"open"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "shop/apply/read",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcyNjQ1MDUyOCwiZXhwIjoxNzI3NjYwMTI4fQ._Shw3VJEapvmylqCFraIzncY4VnNW54_VpRaC2XD77lu8hzVFO0MFuuE_vJ63lyx",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n  {\n    \"shopName\": \"Shop 1\",\n    \"description\": \"Shop description 1\"\n  },\n  {\n    \"shopName\": \"Shop 2\",\n    \"description\": \"Shop description 2\"\n  }\n]\n[\n  {\n    \"shopName\": \"My Shop\",\n    \"description\": \"My shop description\"\n  }\n]\n{\n  \"message\": \"접근이 승인되지 않았습니다.\"\n}\n{\n  \"message\": \"인증이 필요합니다.\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/shop/apply/read",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"shop",
+								"apply",
+								"read"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "open/acceptRefuse",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"shopName\": \"Example Shop\",\n  \"status\": \"accepted\"  // or \"refused\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/shop/apply/open/acceptRefuse",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"shop",
+								"apply",
+								"open",
+								"acceptRefuse"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "shop/apply/close",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"shopName\": \"Example Shop\",\n  \"reason\": \"Closing for personal reasons\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/shop/apply/close",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"shop",
+								"apply",
+								"close"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "shop/apply/close/read",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n  {\n    \"shopName\": \"Closed Shop 1\",\n    \"reason\": \"Business decision\"\n  },\n  {\n    \"shopName\": \"Closed Shop 2\",\n    \"reason\": \"Personal reasons\"\n  }\n]\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/shop/apply/close/read",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"shop",
+								"apply",
+								"close",
+								"read"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "shop/apply/close/acceptRefuse",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"shopName\": \"Example Shop\",\n  \"status\": \"accepted\"  // or \"refused\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/shop/apply/close/acceptRefuse",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"shop",
+								"apply",
+								"close",
+								"acceptRefuse"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "shop/search",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n  {\n    \"shopName\": \"Most Recent Shop 1\",\n    \"category\": \"Electronics\",\n    \"lastTransactionDate\": \"2024-09-20\"\n  },\n  {\n    \"shopName\": \"Most Recent Shop 2\",\n    \"category\": \"Clothing\",\n    \"lastTransactionDate\": \"2024-09-18\"\n  }\n]\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/shop/search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"shop",
+								"search"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "item",
+			"item": [
+				{
+					"name": "items/register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"itemName\": \"Example Item\",\n  \"description\": \"This is an example item.\",\n  \"price\": 29.99,\n  \"category\": \"Example Category\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/items/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"items",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "items/itemAllList",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n  {\n    \"itemName\": \"Item 1\",\n    \"description\": \"Description of item 1\",\n    \"price\": 19.99,\n    \"category\": \"Category 1\"\n  },\n  {\n    \"itemName\": \"Item 2\",\n    \"description\": \"Description of item 2\",\n    \"price\": 29.99,\n    \"category\": \"Category 2\"\n  }\n]\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/items/itemAllList",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"items",
+								"itemAllList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "items/update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"itemName\": \"Updated Item Name\",\n  \"description\": \"Updated description of the item.\",\n  \"price\": 24.99,\n  \"category\": \"Updated Category\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/items/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"items",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcyNjQ1MDUyOCwiZXhwIjoxNzI3NjYwMTI4fQ._Shw3VJEapvmylqCFraIzncY4VnNW54_VpRaC2XD77lu8hzVFO0MFuuE_vJ63lyx",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Item 1\",\n  \"price\": 100,\n  \"description\": \"This is a sample item.\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/items/buyRequest?title=Example Item\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"items",
+								"buyRequest"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "Example Item\n"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "items/offer/read",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/items/offer/read?title=Example Item\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"items",
+								"offer",
+								"read"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "Example Item\n"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "items/offer/accept",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/items/offer/accept-refuse?title=Example Item&offerUser=user123&price=100&acceptRefuse=accept\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"items",
+								"offer",
+								"accept-refuse"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "Example Item"
+								},
+								{
+									"key": "offerUser",
+									"value": "user123"
+								},
+								{
+									"key": "price",
+									"value": "100"
+								},
+								{
+									"key": "acceptRefuse",
+									"value": "accept\n"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/items/offer/confirm",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/items/offer/confirm?title=Example Item\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"items",
+								"offer",
+								"confirm"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "Example Item\n"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "items/itemImg",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/items/itemImg\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"items",
+								"itemImg\n"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
